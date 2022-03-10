@@ -23,9 +23,9 @@ data "ns_connection" "sendgrid" {
 }
 
 locals {
-  tags          = data.ns_workspace.this.tags
-  block_name    = data.ns_workspace.this.block_name
-  resource_name = "${data.ns_workspace.this.block_ref}-${random_string.resource_suffix.result}"
-  api_key       = data.ns_connection.sendgrid.api_key
-  domain        = data.ns_connection.sendgrid.domain
+  tags                = data.ns_workspace.this.tags
+  block_name          = data.ns_workspace.this.block_name
+  resource_name       = "${data.ns_workspace.this.block_ref}-${random_string.resource_suffix.result}"
+  api_key_secret_name = data.ns_connection.sendgrid.outputs.api_key_secret_name
+  domain              = data.ns_connection.sendgrid.outputs.domain
 }
