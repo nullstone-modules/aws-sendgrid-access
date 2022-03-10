@@ -1,0 +1,13 @@
+org_name: nullstone
+name: aws-sendgrid-access
+friendly_name: Sendgrid Access
+description: Opens up the required ports and injects the necessary secrets in order to send emails via Sendgrid
+category: capability/datastores
+type: capability/sendgrid-access/aws
+appCategories:
+    - app/container
+    - app/serverless
+layer: service
+is_public: true
+provider_types:
+    - aws
