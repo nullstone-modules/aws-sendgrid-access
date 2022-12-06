@@ -13,13 +13,14 @@ resource "random_string" "resource_suffix" {
   length  = 5
   lower   = true
   upper   = false
-  number  = false
+  numeric = false
   special = false
 }
 
 data "ns_connection" "sendgrid" {
   name = "sendgrid"
   type = "sendgrid/aws"
+  contract = "datastore/aws/sendgrid"
 }
 
 locals {
